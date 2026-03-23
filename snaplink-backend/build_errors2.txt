@@ -1,0 +1,53 @@
+
+> snaplink-backend@0.0.1 build
+> nest build
+
+[91merror[0m[90m TS5098: [0mOption 'resolvePackageJsonExports' can only be used when 'moduleResolution' is set to 'node16', 'nodenext', or 'bundler'.
+[96msrc/auth/auth.module.ts[0m:[93m15[0m:[93m7[0m - [91merror[0m[90m TS2322: [0mType '(configService: ConfigService) => Promise<{ secret: string; signOptions: { expiresIn: string; }; }>' is not assignable to type '(...args: any[]) => JwtModuleOptions | Promise<JwtModuleOptions>'.
+  Type 'Promise<{ secret: string; signOptions: { expiresIn: string; }; }>' is not assignable to type 'JwtModuleOptions | Promise<JwtModuleOptions>'.
+    Type 'Promise<{ secret: string; signOptions: { expiresIn: string; }; }>' is not assignable to type 'Promise<JwtModuleOptions>'.
+      Type '{ secret: string; signOptions: { expiresIn: string; }; }' is not assignable to type 'JwtModuleOptions'.
+        The types of 'signOptions.expiresIn' are incompatible between these types.
+          Type 'string' is not assignable to type 'number | StringValue | undefined'.
+
+[7m15[0m       useFactory: async (configService: ConfigService) => ({
+[7m  [0m [91m      ~~~~~~~~~~[0m
+
+  [96mnode_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts[0m:[93m24[0m:[93m5[0m
+    [7m24[0m     useFactory?: (...args: any[]) => Promise<JwtModuleOptions> | JwtModuleOptions;
+    [7m  [0m [96m    ~~~~~~~~~~[0m
+    The expected type comes from property 'useFactory' which is declared here on type 'JwtModuleAsyncOptions'
+[96msrc/auth/strategies/jwt.strategy.ts[0m:[93m3[0m:[93m38[0m - [91merror[0m[90m TS7016: [0mCould not find a declaration file for module 'passport-jwt'. 'D:/quiz-backend/snapLaunch/snaplink-backend/node_modules/passport-jwt/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/passport-jwt` if it exists or add a new declaration (.d.ts) file containing `declare module 'passport-jwt';`
+
+[7m3[0m import { ExtractJwt, Strategy } from 'passport-jwt';
+[7m [0m [91m                                     ~~~~~~~~~~~~~~[0m
+[96msrc/common/utils/og-fetch.util.ts[0m:[93m28[0m:[93m7[0m - [91merror[0m[90m TS2322: [0mType 'null' is not assignable to type 'string'.
+
+[7m28[0m       title = null;
+[7m  [0m [91m      ~~~~~[0m
+[96msrc/common/utils/og-fetch.util.ts[0m:[93m37[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'null' is not assignable to type 'string | undefined'.
+
+[7m37[0m         faviconUrl = null;
+[7m  [0m [91m        ~~~~~~~~~~[0m
+[96msrc/common/utils/og-fetch.util.ts[0m:[93m40[0m:[93m7[0m - [91merror[0m[90m TS2322: [0mType 'null' is not assignable to type 'string | undefined'.
+
+[7m40[0m       faviconUrl = null;
+[7m  [0m [91m      ~~~~~~~~~~[0m
+[96msrc/common/utils/og-fetch.util.ts[0m:[93m43[0m:[93m21[0m - [91merror[0m[90m TS2322: [0mType 'string | undefined' is not assignable to type 'string | null'.
+  Type 'undefined' is not assignable to type 'string | null'.
+
+[7m43[0m     return { title, faviconUrl };
+[7m  [0m [91m                    ~~~~~~~~~~[0m
+
+  [96msrc/common/utils/og-fetch.util.ts[0m:[93m4[0m:[93m85[0m
+    [7m4[0m export async function fetchOGMetadata(url: string): Promise<{ title: string | null; faviconUrl: string | null }> {
+    [7m [0m [96m                                                                                    ~~~~~~~~~~[0m
+    The expected type comes from property 'faviconUrl' which is declared here on type '{ title: string | null; faviconUrl: string | null; }'
+[96msrc/main.ts[0m:[93m16[0m:[93m5[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'enableImplicitConversion' does not exist in type 'ValidationPipeOptions'.
+
+[7m16[0m     enableImplicitConversion: true,
+[7m  [0m [91m    ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+Found 8 error(s).
+

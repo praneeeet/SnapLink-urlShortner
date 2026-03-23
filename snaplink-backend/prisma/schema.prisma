@@ -1,0 +1,63 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id            String   @id @default(uuid()) @db.Uuid
+  email         String   @unique
+  password_hash String
+  name          String?
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+  Urls          Url[]
+
+  @@map("users")
+}
+
+model Url {
+  id              String    @id @default(uuid()) @db.Uuid
+  short_code      String    @unique
+  original_url    String
+  user_id         String    @db.Uuid
+  title           String?
+  favicon_url     String?
+  clicks          Int       @default(0)
+  expires_at      DateTime?
+  max_clicks      Int?
+  is_active       Boolean   @default(true)
+  is_public_stats Boolean   @default(false)
+  created_at      DateTime  @default(now())
+  updated_at      DateTime  @updatedAt
+  User            User      @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  Visits          Visit[]
+
+  @@index([short_code])
+  @@index([user_id])
+  @@map("urls")
+}
+
+model Visit {
+  id              String   @id @default(uuid()) @db.Uuid
+  url_id          String   @db.Uuid
+  visited_at      DateTime @default(now())
+  ip_hash         String?
+  country         String?
+  city            String?
+  device          String?
+  browser         String?
+  os              String?
+  referrer        String?
+  referrer_source String?
+  Url             Url      @relation(fields: [url_id], references: [id], onDelete: Cascade)
+
+  @@index([url_id])
+  @@index([visited_at])
+  @@index([url_id, visited_at(sort: Desc)])
+  @@map("visits")
+}

@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg-color: #08000a;
+  --surface-color: #0d0005;
+  --text-primary: rgba(255,255,255,0.92);
+  --text-secondary: rgba(255,255,255,0.50);
+  --text-tertiary: rgba(255,255,255,0.28);
+  --border-color: rgba(255,255,255,0.08);
+
+  --fire-gradient: linear-gradient(135deg, #920004, #D92200, #F3500A);
+  --primary-color: #D92200;
+  --accent-color: #F37100;
+  
+  --glass-bg: rgba(255,255,255,0.05);
+  --glass-border: 1px solid rgba(255,255,255,0.09);
+  --glass-shadow: 0 6px 30px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.07);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Geist', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+input {
+  font-family: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Ambient Orbs */
+.ambient-orbs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(1px);
+}
+
+.ambient-orb-1 {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(146,0,4,0.32) 0%, transparent 70%);
+}
+
+.ambient-orb-2 {
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(243,53,10,0.18) 0%, transparent 70%);
+}
+
+.ambient-orb-3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(90,0,6,0.16) 0%, transparent 70%);
+}
+
+.app-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Base styles for scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.15);
+}

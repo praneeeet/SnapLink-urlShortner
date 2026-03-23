@@ -1,0 +1,27 @@
+# ===== BACKEND =====
+snaplink-backend/node_modules/
+snaplink-backend/dist/
+snaplink-backend/.env
+snaplink-backend/*.log
+snaplink-backend/coverage/
+
+# ===== FRONTEND =====
+snaplink-frontend/node_modules/
+snaplink-frontend/dist/
+snaplink-frontend/.env
+snaplink-frontend/.env.local
+snaplink-frontend/.env.development.local
+snaplink-frontend/.env.production.local
+snaplink-frontend/*.log
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== IDE =====
+.vscode/
+.idea/
+
+# ===== MISC =====
+*.log
+*.tsbuildinfo
