@@ -11,8 +11,7 @@ This document covers the complete planning process for SnapLink — from reading
 | Tool | Purpose |
 |---|---|
 | Claude AI (Anthropic) | Planning, architecture, code generation, debugging |
-| GitHub Copilot | Inline code completion |
-| Prisma Studio | Database inspection during development |
+| Antigravity | code generation and bug fixes |
 | Postman | API testing |
 
 ---
