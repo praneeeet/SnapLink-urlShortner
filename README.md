@@ -6,7 +6,7 @@
 
 ## 🎥 Demo Video
 
-**[▶ Watch on Loom](#)** ← Replace with your Loom link
+**[▶ Watch on Loom](https://www.loom.com/share/2587a89a2bf5424b805d3ba36be81cde)**
 
 > ⚠️ Submission will not be reviewed without a video.
 
